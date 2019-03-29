@@ -8,21 +8,20 @@
 #
 #@Reuven
 
-cd /bin                                         #Change to /bin directory
+cd /bin
 COUNT=0
-var y;
 
 for x in {a..z}; do                             #Loop a through z
   for i in *; do               	                #Loop everything in /bin directory
-    LETTERS[$y] = $x		           	#Set array LETTERS[] to variable x  
+    LETTERS[$y]=$x
     
     if [ "${i:0:1}" == "${LETTERS[$y]}" ]; then #If the first letter of the file/folder in the /bin directory matches the letter of the first for loop
       let "COUNT++"
     fi
   done
-  NUMBERS[$z] = $COUNT
+  NUMBERS[$z]=$COUNT
   echo "${LETTERS[$y]} ... ${NUMBERS[$z]}"
   let "y++"
   let "z++"
-  COUNT = 0	    				#Reset COUNT counter
+  COUNT=0	    				                          #Reset COUNT counter
 done
