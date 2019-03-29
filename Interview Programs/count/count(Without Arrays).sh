@@ -1,4 +1,9 @@
 #!/bin/sh
+
+#Counts and lists the number of occurrences for files stored in "/bin" directory by first letter.
+#
+#@Reuven
+
 cd /bin
 
 COUNT=0
