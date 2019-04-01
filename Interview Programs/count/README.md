@@ -5,4 +5,4 @@ This is done in the following way:
   2. Stores a count of first letter occurrences that match the current letter in LETTERS
      into an array called NUMBERS.
 
-![count-program-execution](images/count.sh.png)
+![program-execution](images/count.sh.png)
