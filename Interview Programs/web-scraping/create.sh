@@ -1,21 +1,21 @@
 #!/bin/sh
 
-#Web Scraping from YouTube's Trending page
-#The following pages are created:
-#1. titles.txt 		--> List of video titles
-#2. ids.txt 		--> List of video ids
-#3. user.txt 		--> List of video users
-#4. durations.txt	-->	List of video durations
-#5. views.txt		-->	List of video views
-#6. table.csv		--> List of everything above
+# Web Scraping from YouTube's Trending page
+# The following pages are created:
+# 1. titles.txt 		--> List of video titles
+# 2. ids.txt  		  --> List of video ids
+# 3. user.txt 		  --> List of video users
+# 4. durations.txt	-->	List of video durations
+# 5. views.txt		  -->	List of video views
+# 6. table.csv		  --> List of everything above
 #
-#@Reuven
+# @author Reuven
 
 #TITLE
 grep aria-describedby index.html | while read x ; do
   title=`expr "$x" : ".*title=\"\(.*\)\" aria-describedby=.*"`
-  echo ${title//,/} 									#Print what is displayed.
-done > echo "TITLE" titles.txt 							#Send printed results to titles.txt, which it will create.
+  echo ${title//,/} 									                    #Print what is displayed.
+done > echo "TITLE" titles.txt 							              #Send printed results to titles.txt, which it will create.
 
 #ID
 grep data-ytid index.html | while read x ; do
@@ -24,7 +24,7 @@ grep data-ytid index.html | while read x ; do
 done > ids.txt
 
 #USERS
-grep aria-describedby index.html | while read x ; do 	#grep to the same line that "aria-describedby" is on.
+grep aria-describedby index.html | while read x ; do 	    #grep to the same line that "aria-describedby" is on.
   user=`expr "$x" : ".* >\(.*\).*</a>"`
   echo ${user}
 done > users.txt
