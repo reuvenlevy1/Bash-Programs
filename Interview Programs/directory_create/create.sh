@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#Creates directories using both depth first search and then breadth first search algorithms
+# Creates directories using both depth first search and then breadth first search algorithms
 #
-#@Reuven
+# @author Reuven
 
 function breadth(){
-local d=$1										#1st argument passed from command line
+local d=$1							#1st argument passed from command line
 local b=$2
 local seed_d=$3
 local open=($seed_d)
@@ -16,8 +16,8 @@ for (( i=0; i<d; i++ )); do
 		tmp=()
 		for (( j=0; j<b; j++ )); do
 			echo $x/$j
-			mkdir -p $x/$j						#creates directory from the current path
-			tmp=(${tmp[@]} $x/$j)				#stores everything in tmp followed by new path values
+			mkdir -p $x/$j				#creates directory from the current path
+			tmp=(${tmp[@]} $x/$j)			#stores everything in tmp followed by new path values
 		done
 		tmp_open=(${tmp_open[@]} ${tmp[@]})
 	done
