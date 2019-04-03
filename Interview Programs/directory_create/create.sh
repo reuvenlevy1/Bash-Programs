@@ -73,9 +73,9 @@ done
 #Program execution example: ./create.sh 3 4 . depth --> program ($0), # ($1), # ($2), directory ($3), algorithm
 if [ -d $3 ]; then
 	if [ "$4" = "depth" ]; then
-		depth $1 $2 $3							#calls depth function passing 3 parameters
+		depth $1 $2 $3					#calls depth function passing 3 parameters
 	elif [ "$4" = "breadth" ]; then
-		breadth $1 $2 $3						#calls breadth function passing 3 parameters
+		breadth $1 $2 $3				#calls breadth function passing 3 parameters
 	else
 		echo "Folder does not exist!"
 	fi
